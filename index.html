@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>omdb search movies</title>
+  </head>
+  <body>
+    <div class="xl:containe">
+      <header class="fixed top-0 z-10 w-full bg-neutral-800">
+        <div class="flex justify-center max-w-7xl mx-auto rounded-lg p-5">
+          <div class="flex justify-center w-full">
+            <div
+              class="flex w-10 items-center justify-center rounded-tl-lg rounded-bl-lg border-r border-gray-100 bg-white p-5"
+            >
+              <svg
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+                class="pointer-events-none absolute w-5 fill-gray-500 transition"
+              >
+                <path
+                  d="M16.72 17.78a.75.75 0 1 0 1.06-1.06l-1.06 1.06ZM9 14.5A5.5 5.5 0 0 1 3.5 9H2a7 7 0 0 0 7 7v-1.5ZM3.5 9A5.5 5.5 0 0 1 9 3.5V2a7 7 0 0 0-7 7h1.5ZM9 3.5A5.5 5.5 0 0 1 14.5 9H16a7 7 0 0 0-7-7v1.5Zm3.89 10.45 3.83 3.83 1.06-1.06-3.83-3.83-1.06 1.06ZM14.5 9a5.48 5.48 0 0 1-1.61 3.89l1.06 1.06A6.98 6.98 0 0 0 16 9h-1.5Zm-1.61 3.89A5.48 5.48 0 0 1 9 14.5V16a6.98 6.98 0 0 0 4.95-2.05l-1.06-1.06Z"
+                ></path>
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="searchInput"
+              class="w-full md:w-1/3 bg-white pl-2 text-base font-semibold outline-0"
+              placeholder="Search..."
+            />
+            <input
+              type="button"
+              value="Search"
+              id="searchBtn"
+              class="bg-blue-500 p-2 text-white font-semibold hover:bg-blue-800 transition-colors cursor-pointer"
+            />
+            <button
+              class="bg-red-500 p-2 rounded-tr-lg rounded-br-lg text-white font-semibold hover:bg-red-800 transition-colors cursor-pointer"
+              id="clearBtn"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+        <!-- pagination -->
+        <div
+          id="pagination"
+          class="bg-neutral-200 flex justify-center items-center text-black"
+        >
+          <button class="p-2" id="previousButton">Previous</button>
+          <span id="pageNumber"></span>
+          <button class="p-2" id="nextButton">Next</button>
+        </div>
+      </header>
+
+      <main class="flex justify-center">
+        <div class="relative w-full">
+          <div class="max-w-7xl mx-auto">
+            <!-- movie list -->
+            <div
+              id="movieList"
+              class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4"
+            ></div>
+            <!-- movie cart -->
+            <div
+              class="rounded-lg flex flex-col w-96 absolute right-2"
+              id="movieCart"
+            ></div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
