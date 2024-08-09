@@ -29,7 +29,7 @@ pagination.style.display = "none";
 const searchMovies = async (page = 1, searchTerm = "") => {
   try {
     let response = await fetch(
-      `http://www.omdbapi.com/?apikey=da09a28f&s=${searchTerm}&type=movie&page=${page}`
+      `https://www.omdbapi.com/?apikey=da09a28f&s=${searchTerm}&type=movie&page=${page}`
     );
 
     if (!response.ok) {
